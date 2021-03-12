@@ -1,35 +1,24 @@
 #include "binary_trees.h"
 
-#define MAX(a, b) ((a) > (b) ? (a) : (b))
 /**
- * tree_height - function that measures the height of a binary tree
- *@tree: is a pointer to the root node of the tree to measure the height.
- * Return: max
- */
-size_t tree_height(const binary_tree_t *tree)
-{
-	size_t left, right;
-
-	if (!tree)
-		return (0);
-	left = tree_height(tree->left);
-	right = tree_height(tree->right);
-	return (MAX(left, right) + 1);
-}
-/**
- * binary_tree_height - function that measures the height of a binary tree
- *@tree: is a pointer to the root node of the tree to measure the height.
- *Return: max
+ * binary_tree_height_2 - Gets the tree height in a binary tree
+ * @tree: Pointer to the tree
+ * Return: Height
  */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-	if (!tree)
-		return (0);
-	return (tree_height(tree) - 1);
+	size_t left_count = 0, right_count = 0;
+
+	if (tree->left)
+		left_count = binary_tree_height(tree->left);
+
+	if (tree->right)
+		right_count = binary_tree_height(tree->right);
+
+	if (right_count > left_count)
+		return (right_count + 1);
+	return (left_count + 1);
 }
-
-
-
 
 /**
  * binary_tree_balance - checks the balance of a binary tree.
