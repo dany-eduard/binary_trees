@@ -35,13 +35,10 @@ void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int    ));
 size_t binary_tree_height(const binary_tree_t *tree);
 size_t tree_height(const binary_tree_t *tree);
 size_t binary_tree_size(const binary_tree_t *tree);
-<<<<<<< HEAD
 size_t binary_tree_nodes(const binary_tree_t *tree);
 int binary_tree_is_full(const binary_tree_t *tree);
 binary_tree_t *binary_tree_sibling(binary_tree_t *node);
-=======
 size_t binary_tree_leaves(const binary_tree_t *tree);
 
->>>>>>> 1156e16cc017058defe93d2500f0ffeceaba1383
 
 #endif /* _BINARY_TREES_H_ */
